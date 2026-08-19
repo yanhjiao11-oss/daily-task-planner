@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#18352f" />
     <meta name="description" content="支持 GitHub Gist 同步的每日任务规划工具" />
     <title>今日计划 · 每日任务规划</title>
-    <link rel="stylesheet" href="styles.css?v=20260819-4" />
+    <link rel="stylesheet" href="styles.css?v=20260819-5" />
   </head>
   <body>
     <div class="app-shell">
@@ -102,10 +102,10 @@
 
     <dialog id="taskDialog" class="modal-dialog">
       <form method="dialog" id="taskForm" class="modal-card">
-        <div class="modal-heading"><div><p class="eyebrow" id="taskDialogEyebrow">NEW TASK</p><h2 id="taskDialogTitle">新建任务</h2></div><button class="icon-button" value="cancel" type="submit" title="关闭" aria-label="关闭">×</button></div>
+        <div class="modal-heading"><div><p class="eyebrow" id="taskDialogEyebrow">NEW TASK</p><h2 id="taskDialogTitle">新建任务</h2></div><button class="icon-button" id="closeTaskDialogButton" type="button" title="关闭" aria-label="关闭">×</button></div>
         <input id="editingTaskId" type="hidden" />
         <label class="field"><span>任务标题 <b>*</b></span><input id="taskTitle" name="title" required maxlength="160" placeholder="例如：完成经济类真题复盘" /></label>
-        <div class="form-row"><label class="field"><span>紧急程度</span><select id="taskPriority"><option value="daily">当日完成</option><option value="weekly" selected>本周完成</option><option value="longterm">长期任务</option></select></label><label class="field"><span>截止日期</span><input id="taskDeadline" type="date" /></label></div>
+        <div class="form-row"><label class="field"><span>紧急程度</span><select id="taskPriority"><option value="daily">当日完成</option><option value="weekly" selected>本周完成</option><option value="longterm">长期任务</option><option value="waiting">待客户回复</option></select></label><label class="field"><span>截止日期</span><input id="taskDeadline" type="date" /></label></div>
         <label class="field"><span>备注</span><textarea id="taskNotes" rows="4" maxlength="2000" placeholder="补充背景、下一步或参考链接"></textarea></label>
         <fieldset class="tag-fieldset">
           <legend>长期总结标签 <small>勾选后自动进入“复盘总结”页面</small></legend>
@@ -114,7 +114,7 @@
             <label><input id="taskTagOptimization" type="checkbox" value="optimization" /><span>◆ 关键优化</span></label>
           </div>
         </fieldset>
-        <div class="modal-actions"><button class="secondary-button" value="cancel" type="submit">取消</button><button class="primary-button" id="saveTaskButton" value="default" type="submit">保存任务</button></div>
+        <div class="modal-actions"><button class="secondary-button" id="cancelTaskDialogButton" type="button">取消</button><button class="primary-button" id="saveTaskButton" value="default" type="submit">保存任务</button></div>
       </form>
     </dialog>
 
@@ -128,6 +128,6 @@
       </form>
     </dialog>
     <div id="toastRegion" class="toast-region" aria-live="polite"></div>
-    <script src="app.js?v=20260819-4"></script>
+    <script src="app.js?v=20260819-5"></script>
   </body>
 </html>
