@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#18352f" />
+    <meta name="description" content="测试与关键优化事项的长期复盘总结" />
+    <title>复盘总结 · 今日计划</title>
+    <link rel="stylesheet" href="styles.css?v=20260819-4" />
+    <link rel="stylesheet" href="summary.css?v=20260819-1" />
+  </head>
+  <body>
+    <div class="app-shell summary-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <span class="brand-mark summary-mark" aria-hidden="true">◆</span>
+          <div>
+            <p class="eyebrow">LONG-TERM REVIEW</p>
+            <h1>复盘总结</h1>
+          </div>
+        </div>
+        <div class="top-actions">
+          <div id="syncStatus" class="sync-status local" role="status"><span class="status-dot"></span><span class="sync-label">仅本地保存</span></div>
+          <button class="icon-button" id="syncButton" type="button" title="立即读取云端" aria-label="立即读取云端">↻</button>
+          <a class="top-nav-link" href="index.html">返回任务计划</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="summary-hero">
+          <div>
+            <p class="date-line">把测试过程和关键优化沉淀成可复用的经验。</p>
+            <h2>客户、动作、结果，一处持续更新。</h2>
+          </div>
+        </section>
+
+        <section class="summary-stats" aria-label="复盘统计">
+          <div><strong id="reviewTotal">0</strong><span>复盘事项</span></div>
+          <div><strong id="testTotal">0</strong><span>测试</span></div>
+          <div><strong id="optimizationTotal">0</strong><span>关键优化</span></div>
+          <div><strong id="resultTotal">0</strong><span>已填写结果</span></div>
+        </section>
+
+        <section class="review-workspace">
+          <div class="toolbar summary-toolbar">
+            <div class="tabs" role="tablist" aria-label="复盘标签筛选">
+              <button class="tab active" data-review-filter="all" role="tab" aria-selected="true" type="button">全部</button>
+              <button class="tab" data-review-filter="test" role="tab" aria-selected="false" type="button">🧪 测试</button>
+              <button class="tab" data-review-filter="optimization" role="tab" aria-selected="false" type="button">◆ 关键优化</button>
+            </div>
+            <span class="summary-save-hint">每条记录单独保存</span>
+          </div>
+          <div id="reviewList" class="review-list" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+    <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+    <script src="summary.js?v=20260819-1"></script>
+  </body>
+</html>
